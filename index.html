@@ -5,10 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Gem Alert Hub</title>
-
-	<!-- Clean modern floating font -->
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
 	<style>
 		body {
 			margin: 0;
@@ -16,16 +13,13 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-
 			background: url("https://media1.tenor.com/m/EsfK9TdObxAAAAAd/gem-alarm-gem-alert.gif") no-repeat center center fixed;
 			background-size: cover;
-
 			font-family: "Poppins", sans-serif;
 			position: relative;
 			overflow: hidden;
 		}
 
-		/* dark overlay */
 		body::before {
 			content: "";
 			position: absolute;
@@ -38,21 +32,15 @@
 			min-height: 350px;
 			padding: 30px;
 			border-radius: 18px;
-
 			background: rgba(255, 255, 255, 0.08);
 			backdrop-filter: blur(14px);
 			-webkit-backdrop-filter: blur(14px);
-
 			border: 1px solid rgba(255, 255, 255, 0.18);
 			box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
-
 			color: white;
 			text-align: center;
-
 			position: relative;
 			z-index: 1;
-
-			/* floating feel */
 			animation: float 6s ease-in-out infinite;
 		}
 
@@ -87,45 +75,138 @@
 		.slot {
 			height: 120px;
 			border-radius: 14px;
-
 			background: rgba(255, 255, 255, 0.06);
 			backdrop-filter: blur(10px);
 			-webkit-backdrop-filter: blur(10px);
-
 			border: 1px solid rgba(255, 255, 255, 0.15);
-
 			display: flex;
+			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-
 			color: rgba(255, 255, 255, 0.85);
 			font-size: 14px;
 			letter-spacing: 1px;
-
 			transition: 0.25s;
 			cursor: pointer;
+			gap: 6px;
+			padding: 10px;
+			box-sizing: border-box;
 		}
 
 		.slot:hover {
 			transform: scale(1.05);
 			background: rgba(255, 255, 255, 0.12);
 		}
+
+		.slot-emoji {
+			font-size: 28px;
+			line-height: 1;
+		}
+
+		.slot-title {
+			font-size: 13px;
+			font-weight: 500;
+			letter-spacing: 1.5px;
+			color: white;
+		}
+
+		.slot-desc {
+			font-size: 10px;
+			font-weight: 300;
+			color: rgba(255, 255, 255, 0.55);
+			letter-spacing: 0.5px;
+		}
+
+		#modal {
+			display: none;
+			position: fixed;
+			inset: 0;
+			background: rgba(0, 0, 0, 0.85);
+			z-index: 999;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+
+		#modal.open {
+			display: flex;
+		}
+
+		#closeBtn {
+			position: absolute;
+			top: 20px;
+			right: 25px;
+			background: rgba(255, 255, 255, 0.15);
+			border: none;
+			color: white;
+			font-size: 16px;
+			padding: 8px 16px;
+			border-radius: 10px;
+			cursor: pointer;
+			font-family: "Poppins", sans-serif;
+			transition: 0.2s;
+		}
+
+		#closeBtn:hover {
+			background: rgba(255, 255, 255, 0.3);
+		}
+
+		#gameFrame {
+			width: 90vw;
+			height: 85vh;
+			border: none;
+			border-radius: 14px;
+		}
 	</style>
 </head>
 
 <body>
-
 	<div class="panel">
 		<h1>WELCOME TO GEM ALERT</h1>
-
 		<div class="grid">
-			<div class="slot">GAME SLOT 1</div>
-			<div class="slot">GAME SLOT 2</div>
-			<div class="slot">GAME SLOT 3</div>
-			<div class="slot">GAME SLOT 4</div>
+
+			<div class="slot" onclick="openGame('https://ninja-muffin24.github.io/Funkin/')">
+				<div class="slot-emoji">🎵</div>
+				<div class="slot-title">FRIDAY NIGHT FUNKIN</div>
+				<div class="slot-desc">rhythm g4m3</div>
+			</div>
+
+			<div class="slot" onclick="openGame('YOUR_G4M3_URL_HERE')">
+				<div class="slot-emoji">🎮</div>
+				<div class="slot-title">G4M3 NAME</div>
+				<div class="slot-desc">short description here</div>
+			</div>
+
+			<div class="slot" onclick="openGame('YOUR_G4M3_URL_HERE')">
+				<div class="slot-emoji">🎮</div>
+				<div class="slot-title">G4M3 NAME</div>
+				<div class="slot-desc">short description here</div>
+			</div>
+
+			<div class="slot" onclick="openGame('YOUR_G4M3_URL_HERE')">
+				<div class="slot-emoji">🎮</div>
+				<div class="slot-title">G4M3 NAME</div>
+				<div class="slot-desc">short description here</div>
+			</div>
+
 		</div>
 	</div>
 
+	<div id="modal">
+		<button id="closeBtn" onclick="closeGame()">✕ close</button>
+		<iframe id="gameFrame" src=""></iframe>
+	</div>
+
+	<script>
+		function openGame(url) {
+			document.getElementById("gameFrame").src = url;
+			document.getElementById("modal").classList.add("open");
+		}
+		function closeGame() {
+			document.getElementById("gameFrame").src = "";
+			document.getElementById("modal").classList.remove("open");
+		}
+	</script>
 </body>
 
 </html>
