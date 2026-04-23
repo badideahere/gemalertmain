@@ -27,8 +27,33 @@
 			background: rgba(0, 0, 0, 0.65);
 		}
 
+		.page-title {
+			position: absolute;
+			top: 25px;
+			width: 100%;
+			text-align: center;
+			font-size: 32px;
+			letter-spacing: 4px;
+			color: white;
+			z-index: 2;
+			font-weight: 500;
+		}
+
+		.credits {
+			position: absolute;
+			right: 35px;
+			top: 50%;
+			transform: translateY(-50%);
+			writing-mode: vertical-rl;
+			text-orientation: mixed;
+			color: rgba(255, 255, 255, 0.6);
+			font-size: 14px;
+			letter-spacing: 2px;
+			z-index: 2;
+		}
+
 		.panel {
-			width: 820px;
+			width: 650px;
 			max-height: 90vh;
 			overflow-y: auto;
 			padding: 30px;
@@ -46,7 +71,9 @@
 			scrollbar-width: none;
 		}
 
-		.panel::-webkit-scrollbar { display: none; }
+		.panel::-webkit-scrollbar {
+			display: none;
+		}
 
 		@keyframes float {
 			0% {
@@ -165,8 +192,11 @@
 </head>
 
 <body>
+
+	<h1 class="page-title">WELCOME TO GEM ALERT</h1>
+	<div class="credits">made by badideahere</div>
+
 	<div class="panel">
-		<h1>WELCOME TO GEM ALERT</h1>
 		<div class="grid">
 
 			<div class="slot" onclick="openGame('https://badideahere.github.io/dawj/')">
@@ -193,31 +223,31 @@
 				<div class="slot-desc">the worst version but toy chica tho</div>
 			</div>
 
-			<div class="slot" onclick="openGame('https://badideahere.github.io/3/')" style="opacity:0.0;cursor:default;">
+			<div class="slot" onclick="openGame('https://badideahere.github.io/3/')">
 				<div class="slot-emoji">🎮</div>
 				<div class="slot-title">fnaf 3</div>
 				<div class="slot-desc">i love springtrap</div>
 			</div>
 
-			<div class="slot" onclick="openGame('https://badideahere.github.io/4/')" style="opacity:0.0;cursor:default;">
+			<div class="slot" onclick="openGame('https://badideahere.github.io/4/')">
 				<div class="slot-emoji">🎮</div>
 				<div class="slot-title">fnaf 4</div>
 				<div class="slot-desc">scariest version</div>
 			</div>
 
-			<div class="slot" onclick="openGame('')" style="opacity:0.0;cursor:default;">
+			<div class="slot" onclick="openGame('')">
 				<div class="slot-emoji">🔒</div>
 				<div class="slot-title">coming soon</div>
 				<div class="slot-desc">stay tuned</div>
 			</div>
 
-			<div class="slot" onclick="openGame('')" style="opacity:0.0;cursor:default;">
+			<div class="slot" onclick="openGame('')">
 				<div class="slot-emoji">🔒</div>
 				<div class="slot-title">coming soon</div>
 				<div class="slot-desc">stay tuned</div>
 			</div>
 
-			<div class="slot" onclick="openGame('')" style="opacity:0.0;cursor:default;">
+			<div class="slot" onclick="openGame('')">
 				<div class="slot-emoji">🔒</div>
 				<div class="slot-title">coming soon</div>
 				<div class="slot-desc">stay tuned</div>
@@ -242,6 +272,7 @@
 			document.getElementById("modal").classList.remove("open");
 		}
 	</script>
+
 </body>
 
 </html>
