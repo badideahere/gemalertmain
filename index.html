@@ -52,6 +52,19 @@
 			z-index: 2;
 		}
 
+		.warning {
+			position: absolute;
+			left: 35px;
+			top: 50%;
+			transform: translateY(-50%) rotate(180deg);
+			writing-mode: vertical-rl;
+			text-orientation: mixed;
+			color: rgba(255, 255, 255, 0.6);
+			font-size: 14px;
+			letter-spacing: 2px;
+			z-index: 2;
+		}
+
 		.panel {
 			width: 650px;
 			max-height: 90vh;
@@ -76,17 +89,9 @@
 		}
 
 		@keyframes float {
-			0% {
-				transform: translateY(0px);
-			}
-
-			50% {
-				transform: translateY(-10px);
-			}
-
-			100% {
-				transform: translateY(0px);
-			}
+			0% { transform: translateY(0px); }
+			50% { transform: translateY(-10px); }
+			100% { transform: translateY(0px); }
 		}
 
 		h1 {
@@ -129,24 +134,9 @@
 			background: rgba(255, 255, 255, 0.12);
 		}
 
-		.slot-emoji {
-			font-size: 28px;
-			line-height: 1;
-		}
-
-		.slot-title {
-			font-size: 13px;
-			font-weight: 500;
-			letter-spacing: 1.5px;
-			color: white;
-		}
-
-		.slot-desc {
-			font-size: 10px;
-			font-weight: 300;
-			color: rgba(255, 255, 255, 0.55);
-			letter-spacing: 0.5px;
-		}
+		.slot-emoji { font-size: 28px; line-height: 1; }
+		.slot-title { font-size: 13px; font-weight: 500; letter-spacing: 1.5px; color: white; }
+		.slot-desc { font-size: 10px; font-weight: 300; color: rgba(255, 255, 255, 0.55); letter-spacing: 0.5px; }
 
 		#modal {
 			display: none;
@@ -159,9 +149,7 @@
 			flex-direction: column;
 		}
 
-		#modal.open {
-			display: flex;
-		}
+		#modal.open { display: flex; }
 
 		#closeBtn {
 			position: absolute;
@@ -178,9 +166,7 @@
 			transition: 0.2s;
 		}
 
-		#closeBtn:hover {
-			background: rgba(255, 255, 255, 0.3);
-		}
+		#closeBtn:hover { background: rgba(255, 255, 255, 0.3); }
 
 		#gameFrame {
 			width: 90vw;
@@ -195,6 +181,7 @@
 
 	<h1 class="page-title">WELCOME TO GEM ALERT</h1>
 	<div class="credits">made by badideahere</div>
+	<div class="warning">you know who gave this to you · don't share · press refresh to hide</div>
 
 	<div class="panel">
 		<div class="grid">
