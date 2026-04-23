@@ -28,8 +28,9 @@
 		}
 
 		.panel {
-			width: 650px;
-			min-height: 350px;
+			width: 820px;
+			max-height: 90vh;
+			overflow-y: auto;
 			padding: 30px;
 			border-radius: 18px;
 			background: rgba(255, 255, 255, 0.08);
@@ -42,7 +43,10 @@
 			position: relative;
 			z-index: 1;
 			animation: float 6s ease-in-out infinite;
+			scrollbar-width: none;
 		}
+
+		.panel::-webkit-scrollbar { display: none; }
 
 		@keyframes float {
 			0% {
@@ -67,7 +71,7 @@
 
 		.grid {
 			display: grid;
-			grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: repeat(3, 1fr);
 			gap: 15px;
 			margin-top: 20px;
 		}
@@ -189,6 +193,36 @@
 				<div class="slot-desc">the worst version but toy chica tho</div>
 			</div>
 
+			<div class="slot" onclick="openGame('https://badideahere.github.io/3/')" style="opacity:0.4;cursor:default;">
+				<div class="slot-emoji">🎮</div>
+				<div class="slot-title">fnaf 3</div>
+				<div class="slot-desc">i love springtrap</div>
+			</div>
+
+			<div class="slot" onclick="openGame('https://badideahere.github.io/4/')" style="opacity:0.4;cursor:default;">
+				<div class="slot-emoji">🎮</div>
+				<div class="slot-title">fnaf 4</div>
+				<div class="slot-desc">scariest version</div>
+			</div>
+
+			<div class="slot" onclick="openGame('')" style="opacity:0.4;cursor:default;">
+				<div class="slot-emoji">🔒</div>
+				<div class="slot-title">coming soon</div>
+				<div class="slot-desc">stay tuned</div>
+			</div>
+
+			<div class="slot" onclick="openGame('')" style="opacity:0.4;cursor:default;">
+				<div class="slot-emoji">🔒</div>
+				<div class="slot-title">coming soon</div>
+				<div class="slot-desc">stay tuned</div>
+			</div>
+
+			<div class="slot" onclick="openGame('')" style="opacity:0.4;cursor:default;">
+				<div class="slot-emoji">🔒</div>
+				<div class="slot-title">coming soon</div>
+				<div class="slot-desc">stay tuned</div>
+			</div>
+
 		</div>
 	</div>
 
@@ -199,6 +233,7 @@
 
 	<script>
 		function openGame(url) {
+			if (!url) return;
 			document.getElementById("gameFrame").src = url;
 			document.getElementById("modal").classList.add("open");
 		}
