@@ -53,6 +53,18 @@
 			z-index: 2;
 		}
 
+		.side-warning {
+			position: absolute;
+			bottom: 18px;
+			left: 50%;
+			transform: translateX(-50%);
+			color: rgba(255, 255, 255, 0.35);
+			font-size: 10px;
+			letter-spacing: 2px;
+			z-index: 2;
+			white-space: nowrap;
+		}
+
 		.panel {
 			width: 650px;
 			max-height: 80vh;
@@ -128,76 +140,6 @@
 		.slot-title { font-size: 11px; font-weight: 500; letter-spacing: 1.5px; color: white; }
 		.slot-desc { font-size: 9px; font-weight: 300; color: rgba(255, 255, 255, 0.5); letter-spacing: 0.5px; }
 
-		/* Warning popup */
-		#warningOverlay {
-			position: fixed;
-			inset: 0;
-			background: rgba(0, 0, 10, 0.85);
-			z-index: 9999;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-
-		#warningBox {
-			background: rgba(10, 20, 60, 0.6);
-			backdrop-filter: blur(20px);
-			-webkit-backdrop-filter: blur(20px);
-			border: 1px solid rgba(100, 160, 255, 0.3);
-			border-radius: 18px;
-			padding: 40px 50px;
-			text-align: center;
-			color: white;
-			max-width: 420px;
-			width: 90%;
-			position: relative;
-			box-shadow: 0 0 50px rgba(80, 140, 255, 0.2);
-			animation: popIn 0.3s ease;
-		}
-
-		@keyframes popIn {
-			from { transform: scale(0.85); opacity: 0; }
-			to { transform: scale(1); opacity: 1; }
-		}
-
-		#warningBox .warn-icon {
-			font-size: 48px;
-			margin-bottom: 16px;
-		}
-
-		#warningBox p {
-			font-size: 13px;
-			line-height: 1.9;
-			letter-spacing: 1.5px;
-			color: rgba(255, 255, 255, 0.85);
-			margin: 0 0 28px 0;
-		}
-
-		#dismissBtn {
-			background: rgba(30, 60, 120, 0.4);
-			border: 1px solid rgba(100, 160, 255, 0.25);
-			color: rgba(255, 255, 255, 0.35);
-			font-family: "Orbitron", sans-serif;
-			font-size: 11px;
-			letter-spacing: 2px;
-			padding: 10px 24px;
-			border-radius: 10px;
-			cursor: not-allowed;
-			transition: all 0.3s;
-		}
-
-		#dismissBtn.ready {
-			color: white;
-			cursor: pointer;
-			border-color: rgba(100, 160, 255, 0.5);
-			box-shadow: 0 0 14px rgba(80, 140, 255, 0.2);
-		}
-
-		#dismissBtn.ready:hover {
-			background: rgba(60, 100, 200, 0.4);
-		}
-
-		/* Game modal */
 		#modal {
 			display: none;
 			position: fixed;
@@ -260,19 +202,12 @@
 
 	<h1 class="page-title">THE SPACE STATION</h1>
 	<div class="credits">made by badideahere</div>
-
-	<div id="warningOverlay">
-		<div id="warningBox">
-			<div class="warn-icon">⚠️</div>
-			<p>you know who gave this to you<br>don't share this with anyone<br>press refresh to hide the page</p>
-			<button id="dismissBtn" disabled>close (3)</button>
-		</div>
-	</div>
+	<div class="side-warning">you know who gave this to you · don't share this with anyone · press refresh to hide the page</div>
 
 	<div class="panel">
 		<div class="grid">
 
-            <div class="slot" onclick="openGame('https://badideahere.github.io/dawj/')">
+			<div class="slot" onclick="openGame('https://badideahere.github.io/dawj/')">
 				<div class="slot-emoji">🧴</div>
 				<div class="slot-title">five nights a big je's</div>
 				<div class="slot-desc">fnaf ripoff</div>
@@ -308,85 +243,85 @@
 				<div class="slot-desc">scariest version</div>
 			</div>
 
-            <div class="slot" onclick="openGame('https://badideahere.github.io/minecraft1.5.2/')">
+			<div class="slot" onclick="openGame('https://badideahere.github.io/minecraft1.5.2/')">
 				<div class="slot-emoji">⛏️</div>
 				<div class="slot-title">minecraft</div>
 				<div class="slot-desc">ver 1.5.2 web</div>
 			</div>
 
-            <div class="slot" onclick="openGame('https://badideahere.github.io/motox3m/')">
+			<div class="slot" onclick="openGame('https://badideahere.github.io/motox3m/')">
 				<div class="slot-emoji">🏍️</div>
 				<div class="slot-title">moto x3m</div>
 				<div class="slot-desc">extreme bike stunts</div>
 			</div>
 
-            <div class="slot" onclick="openGame('https://badideahere.github.io/slope/')">
+			<div class="slot" onclick="openGame('https://badideahere.github.io/slope/')">
 				<div class="slot-emoji">🥎</div>
 				<div class="slot-title">slope</div>
 				<div class="slot-desc">don't fall off</div>
 			</div>
 
-            <div class="slot" onclick="openGame('https://badideahere.github.io/sm64/')">
+			<div class="slot" onclick="openGame('https://badideahere.github.io/sm64/')">
 				<div class="slot-emoji">🍄</div>
 				<div class="slot-title">mario 64</div>
 				<div class="slot-desc">n64 classic</div>
 			</div>
 
-            <div class="slot" onclick="openGame('https://badideahere.github.io/snake/')">
+			<div class="slot" onclick="openGame('https://badideahere.github.io/snake/')">
 				<div class="slot-emoji">🐍</div>
 				<div class="slot-title">snake</div>
 				<div class="slot-desc">retro arcade</div>
 			</div>
 
-            <div class="slot" onclick="openGame('https://badideahere.github.io/run3/')">
+			<div class="slot" onclick="openGame('https://badideahere.github.io/run3/')">
 				<div class="slot-emoji">🏃</div>
 				<div class="slot-title">run 3</div>
 				<div class="slot-desc">gravity defying</div>
 			</div>
 
-            <div class="slot" onclick="openGame('https://badideahere.github.io/towermaster/')">
+			<div class="slot" onclick="openGame('https://badideahere.github.io/towermaster/')">
 				<div class="slot-emoji">🗼</div>
 				<div class="slot-title">tower master</div>
 				<div class="slot-desc">build it high</div>
 			</div>
 
-            <div class="slot" onclick="openGame('https://badideahere.github.io/subwaysurfers/')">
+			<div class="slot" onclick="openGame('https://badideahere.github.io/subwaysurfers/')">
 				<div class="slot-emoji">🚂</div>
 				<div class="slot-title">subway surfers</div>
 				<div class="slot-desc">dodge the train</div>
 			</div>
 
-            <div class="slot" onclick="openGame('https://badideahere.github.io/vex3/')">
+			<div class="slot" onclick="openGame('https://badideahere.github.io/vex3/')">
 				<div class="slot-emoji">🏃‍♂️</div>
 				<div class="slot-title">vex 3</div>
 				<div class="slot-desc">parkour series</div>
 			</div>
 
-            <div class="slot" onclick="openGame('https://badideahere.github.io/vex4/')">
+			<div class="slot" onclick="openGame('https://badideahere.github.io/vex4/')">
 				<div class="slot-emoji">🏃‍♂️</div>
 				<div class="slot-title">vex 4</div>
 				<div class="slot-desc">keep moving</div>
 			</div>
 
-            <div class="slot" onclick="openGame('https://badideahere.github.io/vex5/')">
+			<div class="slot" onclick="openGame('https://badideahere.github.io/vex5/')">
 				<div class="slot-emoji">🏃‍♂️</div>
 				<div class="slot-title">vex 5</div>
 				<div class="slot-desc">expert levels</div>
 			</div>
 
-            <div class="slot" onclick="openGame('https://badideahere.github.io/vex6/')">
+			<div class="slot" onclick="openGame('https://badideahere.github.io/vex6/')">
 				<div class="slot-emoji">🏃‍♂️</div>
 				<div class="slot-title">vex 6</div>
 				<div class="slot-desc">the ultimate trial</div>
 			</div>
 
-            <div class="slot" onclick="openGame('https://badideahere.github.io/tetris/')">
+			<div class="slot" onclick="openGame('https://badideahere.github.io/tetris/')">
 				<div class="slot-emoji">🧱</div>
 				<div class="slot-title">tetris</div>
 				<div class="slot-desc">fit the blocks</div>
 			</div>
 
-            <div class="slot" onclick="openGame('https://badideahere.github.io/underrun/')">
+			<div class="slot" onclick="openGame('https://badideahere.github.io/underrun/')">
 				<div class="slot-emoji">🔫</div>
 				<div class="slot-title">underrun</div>
 				<div class="slot-desc">cyberpunk shxxter</div>
@@ -408,27 +343,6 @@
 	</div>
 
 	<script>
-		let countdown = 3;
-		const btn = document.getElementById("dismissBtn");
-
-		const timer = setInterval(() => {
-			countdown--;
-			if (countdown <= 0) {
-				clearInterval(timer);
-				btn.textContent = "close";
-				btn.disabled = false;
-				btn.classList.add("ready");
-			} else {
-				btn.textContent = "close (" + countdown + ")";
-			}
-		}, 1000);
-
-		btn.addEventListener("click", function () {
-			if (!btn.disabled) {
-				document.getElementById("warningOverlay").style.display = "none";
-			}
-		});
-
 		function openGame(url) {
 			if (!url) return;
 			const frame = document.getElementById("gameFrame");
